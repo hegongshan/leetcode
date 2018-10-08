@@ -16,26 +16,17 @@ public class ValidParentheses20 {
             if(c == '(' || c == '{' || c== '[') {
                 stack.push(c);
             } else if (c == ')') {
-            	if(stack.isEmpty()) {
-            		return false;
-            	}
-            	if(stack.peek() != '(') {
+            	if(stack.isEmpty() || stack.peek() != '(') {
                     return false;
                 } 
                 stack.pop();
             } else if (c == '}') {
-            	if(stack.isEmpty()) {
-            		return false;
-            	}
-            	if(stack.peek() != '{') {
+            	if(stack.isEmpty() || stack.peek() != '{') {
                     return false;
                 } 
                 stack.pop();
             } else if(c == ']') {
-            	if(stack.isEmpty()) {
-            		return false;
-            	}
-                if(stack.peek() != '[') {
+                if(stack.isEmpty() || stack.peek() != '[') {
                     return false;
                 } 
                 stack.pop();
